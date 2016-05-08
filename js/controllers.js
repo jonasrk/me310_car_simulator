@@ -4,6 +4,8 @@ angular.module('app.controllers', [])
     
     $scope.doit = function () {
         console.log(("foobar"));
+
+        socket.emit('my other event', 'hi server');
     }
 
 })
