@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
 angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives'])
 
 .run(function($ionicPlatform) {
@@ -24,7 +25,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 .factory('socket', function ($rootScope) {
 
-  var socket = io.connect("http://localhost:8080");
+  var socket = io.connect("http://localhost:1234");
 
   return {
     on: function (eventName, callback) {

@@ -1,6 +1,10 @@
 angular.module('app.controllers', [])
   
-.controller('carTabDefaultPageCtrl', function($scope) {
+.controller('carTabDefaultPageCtrl', function($scope, socket) {
+    
+    $scope.doit = function () {
+        console.log(("foobar"));
+    }
 
 })
    
