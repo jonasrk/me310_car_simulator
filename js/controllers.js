@@ -2,19 +2,22 @@ angular.module('app.controllers', [])
   
 .controller('carTabDefaultPageCtrl', function($scope, socket) {
     
-    $scope.doit = function () {
-        console.log(("foobar"));
 
-        socket.emit('my other event', 'hi server');
+})
+   
+.controller('locationTabDefaultPageCtrl', function($scope, socket) {
+
+})
+   
+.controller('batteryTabDefaultPageCtrl', function($scope, socket) {
+    
+    $scope.tval = 5;
+    
+    $scope.updateBattery = function (tval) {
+        console.log(("New Battery level: " + tval));
+
+        socket.emit('updateBattery', tval);
     }
-
-})
-   
-.controller('locationTabDefaultPageCtrl', function($scope) {
-
-})
-   
-.controller('batteryTabDefaultPageCtrl', function($scope) {
 
 })
     

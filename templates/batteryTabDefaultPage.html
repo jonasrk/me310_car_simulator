@@ -1,9 +1,10 @@
 <ion-view title="Battery Tab Default Page" id="page4">
     <ion-content padding="true" class="has-header">
         <form class="list">
-            <ion-item class="range range-positive">Battery
-                <input type="range" value="50" min="0" max="100">
-            </ion-item>
+            <label class="item item-input">
+                <input type="text" placeholder="First Name" ng-model="tval" ng-change="updateBattery(tval)">
+            </label>
         </form>
+        {{ tval }}
     </ion-content>
 </ion-view>
