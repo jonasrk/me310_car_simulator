@@ -19,5 +19,13 @@ angular.module('app.controllers', [])
         socket.emit('updateBattery', tval);
     }
 
+    $scope.oval = 5;
+
+    $scope.updateOil = function (oval) {
+        console.log(("New Oil level: " + oval));
+
+        socket.emit('updateOil', oval);
+    }
+
 })
     

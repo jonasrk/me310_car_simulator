@@ -2,9 +2,11 @@
     <ion-content padding="true" class="has-header">
         <form class="list">
             <label class="item item-input">
-                <input type="text" placeholder="First Name" ng-model="tval" ng-change="updateBattery(tval)">
+                <input type="text" placeholder="Battery Level" ng-model="tval" ng-change="updateBattery(tval)">
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Oil Level" ng-model="oval" ng-change="updateOil(oval)">
             </label>
         </form>
-        {{ tval }}
     </ion-content>
 </ion-view>
