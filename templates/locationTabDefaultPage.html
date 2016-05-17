@@ -7,6 +7,28 @@
             <ion-item class="range range-positive">East
                 <input type="range" value="50" min="0" max="100">
             </ion-item>
+
+            <ion-list>
+                <div class="item item-divider">
+                    Weather
+                </div>
+                <ion-radio ng-model="choice" ng-value="'Sunny'" ng-change="updateWeather(choice)">Sunny</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'Rainy'" ng-change="updateWeather(choice)">Rainy</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'Foggy'" ng-change="updateWeather(choice)">Foggy</ion-radio>
+                <ion-radio ng-model="choice" ng-value="'Snowy'" ng-change="updateWeather(choice)">Snowy</ion-radio>
+                <div class="item item-divider">
+                    Time (hour of day)
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Time" ng-model="time_val" ng-change="updateTime(time_val)">
+                </label>
+                <div class="item item-divider">
+                    Temperature (in degrees Fahrenheit)
+                </div>
+                <label class="item item-input">
+                    <input type="text" placeholder="Temperature" ng-model="temp_val" ng-change="updateTemperature(temp_val)">
+                </label>
+            </ion-list>
         </form>
     </ion-content>
 </ion-view>
