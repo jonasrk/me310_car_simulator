@@ -13,7 +13,7 @@ angular.module('app.controllers', [])
             console.log(("New Weather: " + data));
 
             socket.emit('simulatorUpdate', {
-                eventName: 'updateWeather',
+                key: 'weather',
                 payLoad: data
             });
         };
@@ -24,7 +24,7 @@ angular.module('app.controllers', [])
             console.log(("New Time: " + data));
 ;
             socket.emit('simulatorUpdate', {
-                eventName: 'updateTime',
+                key: 'time',
                 payLoad: data
             });
         };
@@ -35,7 +35,7 @@ angular.module('app.controllers', [])
             console.log(("New Temperature: " + data));
 
             socket.emit('simulatorUpdate', {
-                eventName: 'updateTemperature',
+                key: 'temperature',
                 payLoad: data
             });
         };
@@ -50,7 +50,7 @@ angular.module('app.controllers', [])
             console.log(("New Battery level: " + data));
 
             socket.emit('simulatorUpdate', {
-                eventName: 'updateBattery',
+                key: 'battery',
                 payLoad: data
             });
         };
@@ -61,7 +61,7 @@ angular.module('app.controllers', [])
             console.log(("New Oil level: " + data));
 
             socket.emit('simulatorUpdate', {
-                eventName: 'updateOil',
+                key: 'oil',
                 payLoad: data
             });
         };
