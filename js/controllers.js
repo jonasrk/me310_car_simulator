@@ -9,26 +9,35 @@ angular.module('app.controllers', [])
         
         $scope.choice = null;
         
-        $scope.updateWeather = function (choice) {
-            console.log(("New Weather: " + choice));
+        $scope.updateWeather = function (data) {
+            console.log(("New Weather: " + data));
 
-            socket.emit('updateWeather', choice);
+            socket.emit('simulatorUpdate', {
+                eventName: 'updateWeather',
+                payLoad: data
+            });
         };
 
         $scope.time_val = 6;
 
-        $scope.updateTime = function (time_val) {
-            console.log(("New Time: " + time_val));
-
-            socket.emit('updateTime', time_val);
+        $scope.updateTime = function (data) {
+            console.log(("New Time: " + data));
+;
+            socket.emit('simulatorUpdate', {
+                eventName: 'updateTime',
+                payLoad: data
+            });
         };
 
         $scope.temp_val = 72;
 
-        $scope.updateTemperature = function (temp_val) {
-            console.log(("New Temperature: " + temp_val));
+        $scope.updateTemperature = function (data) {
+            console.log(("New Temperature: " + data));
 
-            socket.emit('updateTemperature', temp_val);
+            socket.emit('simulatorUpdate', {
+                eventName: 'updateTemperature',
+                payLoad: data
+            });
         };
 
     })
@@ -37,18 +46,24 @@ angular.module('app.controllers', [])
 
         $scope.tval = 5;
 
-        $scope.updateBattery = function (tval) {
-            console.log(("New Battery level: " + tval));
+        $scope.updateBattery = function (data) {
+            console.log(("New Battery level: " + data));
 
-            socket.emit('updateBattery', tval);
+            socket.emit('simulatorUpdate', {
+                eventName: 'updateBattery',
+                payLoad: data
+            });
         };
 
         $scope.oval = 5;
 
-        $scope.updateOil = function (oval) {
-            console.log(("New Oil level: " + oval));
+        $scope.updateOil = function (data) {
+            console.log(("New Oil level: " + data));
 
-            socket.emit('updateOil', oval);
+            socket.emit('simulatorUpdate', {
+                eventName: 'updateOil',
+                payLoad: data
+            });
         };
 
     })
