@@ -6,9 +6,9 @@ angular.module('app.controllers', [])
     })
 
     .controller('locationTabDefaultPageCtrl', function($scope, socket) {
-        
+
         $scope.choice = null;
-        
+
         $scope.updateWeather = function (data) {
             console.log(("New Weather: " + data));
 
@@ -22,7 +22,7 @@ angular.module('app.controllers', [])
 
         $scope.updateTime = function (data) {
             console.log(("New Time: " + data));
-;
+            ;
             socket.emit('simulatorUpdate', {
                 key: 'time',
                 payLoad: data
@@ -43,28 +43,28 @@ angular.module('app.controllers', [])
     })
 
     .controller('batteryTabDefaultPageCtrl', function($scope, socket) {
+        
+        $scope.qty_battery = new Quantity(12, socket, 'battery');
+        $scope.qty_oil = new Quantity(12, socket, 'oil');
+        
+    });
 
-        $scope.tval = 5;
+function Quantity(num, socket, key) {
+    var qty = num;
 
-        $scope.updateBattery = function (data) {
-            console.log(("New Battery level: " + data));
+    this.__defineGetter__("qty", function () {
+        return qty;
+    });
 
-            socket.emit('simulatorUpdate', {
-                key: 'battery',
-                payLoad: data
-            });
-        };
+    this.__defineSetter__("qty", function (val) {
+        val = parseInt(val);
+        qty = val;
 
-        $scope.oval = 5;
+        console.log(('New ' + key + ' : ' + qty));
 
-        $scope.updateOil = function (data) {
-            console.log(("New Oil level: " + data));
-
-            socket.emit('simulatorUpdate', {
-                key: 'oil',
-                payLoad: data
-            });
-        };
-
-    })
-    
+        socket.emit('simulatorUpdate', {
+            key: key,
+            payLoad: qty
+        });
+    });
+}

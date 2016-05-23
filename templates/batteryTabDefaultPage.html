@@ -1,12 +1,19 @@
 <ion-view title="Battery Tab Default Page" id="page4">
     <ion-content padding="true" class="has-header">
-        <form class="list">
-            <label class="item item-input">
-                <input type="text" placeholder="Battery Level" ng-model="tval" ng-change="updateBattery(tval)">
-            </label>
-            <label class="item item-input">
-                <input type="text" placeholder="Oil Level" ng-model="oval" ng-change="updateOil(oval)">
-            </label>
-        </form>
+
+        <div class="list">
+            <div class="item range range-positive">
+                <i class="icon ion-battery-empty"></i>
+                <input type="range" min="0" max="100" ng-model="qty_battery.qty" />
+                <i class="icon ion-battery-charging"></i>
+            </div>
+            <div class="item range range-positive">
+                <i class="icon ion-ios-flask-outline"></i>
+                <input type="range" min="0" max="100" ng-model="qty_oil.qty" />
+                <i class="icon ion-ios-flask"></i>
+            </div>
+        </div>
+
+
     </ion-content>
 </ion-view>

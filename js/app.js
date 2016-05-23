@@ -25,7 +25,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
 
 .factory('socket', function ($rootScope) {
 
-  var socket = io.connect("http://localhost:8080", {
+  var socket = io.connect("http://mtin.de:8080", {
 		query: 'id=simulator'
 	});
 
