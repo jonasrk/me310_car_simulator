@@ -19,9 +19,11 @@
                 <div class="item item-divider">
                     Time (hour of day)
                 </div>
-                <label class="item item-input">
-                    <input type="text" placeholder="Time" ng-model="time_val" ng-change="updateTime(time_val)">
-                </label>
+                <div class="item range range-positive">
+                    <i class="icon ion-clock"></i>
+                    <input type="range" min="0" max="86400" ng-model="qty_time.qty" />
+                    <p> {{ getHour() }}:{{ getMinute() }}</p>
+                </div>
                 <div class="item item-divider">
                     Temperature (in degrees Fahrenheit)
                 </div>

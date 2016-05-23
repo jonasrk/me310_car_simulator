@@ -7,6 +7,20 @@ angular.module('app.controllers', [])
 
     .controller('locationTabDefaultPageCtrl', function($scope, socket) {
 
+        $scope.qty_time = new Quantity(12, socket, 'time');
+
+        $scope.getHour = function () {
+            
+            return Math.floor($scope.qty_time.qty / 3600);
+            
+        };
+
+        $scope.getMinute = function () {
+
+            return Math.floor($scope.qty_time.qty / 60 % 60);
+
+        };
+
         $scope.choice = null;
 
         $scope.updateWeather = function (data) {
@@ -46,7 +60,7 @@ angular.module('app.controllers', [])
         
         $scope.qty_battery = new Quantity(12, socket, 'battery');
         $scope.qty_oil = new Quantity(12, socket, 'oil');
-        
+
     });
 
 function Quantity(num, socket, key) {
