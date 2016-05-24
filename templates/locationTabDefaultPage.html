@@ -1,12 +1,9 @@
-<ion-view title="Location Tab Default Page" id="page3">
+<ion-view title="Location" id="page3">
     <ion-content padding="true" class="has-header">
         <form class="list">
-            <ion-item class="range range-positive">North
-                <input type="range" value="50" min="0" max="100">
-            </ion-item>
-            <ion-item class="range range-positive">East
-                <input type="range" value="50" min="0" max="100">
-            </ion-item>
+            <ion-radio ng-model="location_choice" ng-value="'Home'" ng-change="updateLocation(location_choice)">Home</ion-radio>
+            <ion-radio ng-model="location_choice" ng-value="'Work'" ng-change="updateLocation(location_choice)">Work</ion-radio>
+            <ion-radio ng-model="location_choice" ng-value="'School'" ng-change="updateLocation(location_choice)">School</ion-radio>
 
             <ion-list>
                 <div class="item item-divider">

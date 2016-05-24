@@ -21,6 +21,17 @@ angular.module('app.controllers', [])
 
         };
 
+        $scope.location_choice = null;
+
+        $scope.updateLocation = function (data) {
+            console.log(("New Location: " + data));
+
+            socket.emit('simulatorUpdate', {
+                key: 'location',
+                payLoad: data
+            });
+        };
+
         $scope.choice = null;
 
         $scope.updateWeather = function (data) {
@@ -28,17 +39,6 @@ angular.module('app.controllers', [])
 
             socket.emit('simulatorUpdate', {
                 key: 'weather',
-                payLoad: data
-            });
-        };
-
-        $scope.time_val = 6;
-
-        $scope.updateTime = function (data) {
-            console.log(("New Time: " + data));
-            ;
-            socket.emit('simulatorUpdate', {
-                key: 'time',
                 payLoad: data
             });
         };
