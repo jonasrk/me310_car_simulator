@@ -24,6 +24,9 @@
                     <input type="range" min="0" max="86400" ng-model="qty_time.qty" />
                     <p> {{ getHour() }}:{{ getMinute() }}</p>
                 </div>
+                <button class="button button-block button-positive" ng-click="qty_time.qty = -1;">
+                    Use current time
+                </button>
                 <div class="item item-divider">
                     Temperature (in degrees Fahrenheit)
                 </div>
