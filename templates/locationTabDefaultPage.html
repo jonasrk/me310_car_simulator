@@ -21,13 +21,13 @@
                     <input type="range" min="0" max="86400" ng-model="qty_time.qty" />
                     <p> {{ getHour() }}:{{ getMinute() }}</p>
                 </div>
-                <button class="button button-block button-positive" ng-click="qty_time.qty = -1;">
+                <button class="button button-block button-positive" ng-click="qty_time.qty = None;">
                     Use current time
                 </button>
                 <div class="item item-divider">
-                    Use Cases
+                    Use <Cases></Cases>
                 </div>
-                <ion-radio ng-model="usecase" ng-value="7 * 3600" ng-change="updateUseCase(10.5 * 3600)">Use Case 1</ion-radio>
+                <ion-radio ng-model="usecase" ng-value="10.5 * 3600" ng-change="updateUseCase(10.5 * 3600)">Use Case 1</ion-radio>
                 <ion-radio ng-model="usecase" ng-value="18 * 3600" ng-change="updateUseCase(18 * 3600)">Use Case 2</ion-radio>
                 <ion-radio ng-model="usecase" ng-value="10 * 3600" ng-change="updateUseCase(10 * 3600)">Use Case 3</ion-radio>
             </ion-list>
