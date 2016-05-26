@@ -43,6 +43,17 @@ angular.module('app.controllers', [])
             });
         };
 
+        $scope.usecase = null;
+
+        $scope.updateUseCase = function (data) {
+            console.log(("New Use Case - time: " + data));
+
+            socket.emit('simulatorUpdate', {
+                key: 'time',
+                payLoad: data
+            });
+        };
+
         $scope.temp_val = 72;
 
         $scope.updateTemperature = function (data) {
