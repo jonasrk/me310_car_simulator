@@ -25,11 +25,19 @@
                     Use current time
                 </button>
                 <div class="item item-divider">
-                    Use <Cases></Cases>
+                    Use Cases
                 </div>
                 <ion-radio ng-model="usecase" ng-value="10.5 * 3600" ng-change="updateUseCase(10.5 * 3600)">Use Case 1</ion-radio>
                 <ion-radio ng-model="usecase" ng-value="18 * 3600" ng-change="updateUseCase(18 * 3600)">Use Case 2</ion-radio>
                 <ion-radio ng-model="usecase" ng-value="10 * 3600" ng-change="updateUseCase(10 * 3600)">Use Case 3</ion-radio>
+                <div class="item item-divider">
+                    LED Mode
+                </div>
+                <ion-radio ng-model="LED_mode" ng-value="0" ng-change="updateLED_mode(0)">0</ion-radio>
+                <ion-radio ng-model="LED_mode" ng-value="1" ng-change="updateLED_mode(1)">1</ion-radio>
+                <ion-radio ng-model="LED_mode" ng-value="2" ng-change="updateLED_mode(2)">2</ion-radio>
+                <ion-radio ng-model="LED_mode" ng-value="3" ng-change="updateLED_mode(3)">3</ion-radio>
+                <ion-radio ng-model="LED_mode" ng-value="4" ng-change="updateLED_mode(4)">4</ion-radio>
             </ion-list>
         </form>
     </ion-content>

@@ -54,6 +54,17 @@ angular.module('app.controllers', [])
             });
         };
 
+         $scope.LED_mode = null;
+
+        $scope.updateLED_mode= function (data) {
+            console.log(("New LED Mode: " + data));
+
+            socket.emit('simulatorUpdate', {
+                key: 'LED_Mode_Update',
+                payLoad: data
+            });
+        };
+
         $scope.temp_val = 72;
 
         $scope.updateTemperature = function (data) {
