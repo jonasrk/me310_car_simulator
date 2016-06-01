@@ -7,7 +7,8 @@ angular.module('app.controllers', [])
 
     .controller('locationTabDefaultPageCtrl', function($scope, socket) {
 
-        $scope.qty_time = new Quantity(12, socket, 'time');
+        var dt = new Date();
+        $scope.qty_time = new Quantity(60 * dt.getMinutes() + 60 * 60 * dt.getHours(), socket, 'time');
 
         $scope.getHour = function () {
             
