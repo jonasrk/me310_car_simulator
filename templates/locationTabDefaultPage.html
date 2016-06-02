@@ -1,6 +1,17 @@
 <ion-view title="Location" id="page3">
     <ion-content padding="true" class="has-header">
         <form class="list">
+            <div class="item item-divider">
+                Use Cases
+            </div>
+            <ion-radio ng-model="usecase" ng-value="17.3 * 3600" ng-change="updateUseCase('time', 17.3 * 3600)">(1) Time to leave - 30 mins</ion-radio>
+            <ion-radio ng-model="usecase" ng-value="18 * 3600" ng-change="updateUseCase('time', 18 * 3600)">(1) Time to leave - soon!</ion-radio>
+            <ion-radio ng-model="usecase" ng-value="19.5 * 3600" ng-change="updateUseCase('battery', 100);">(2) Enough battery</ion-radio>
+            <ion-radio ng-model="usecase" ng-value="12.5 * 3600" ng-change="updateUseCase('battery', 8);">(2) NOT enough battery</ion-radio>
+
+            <div class="item item-divider">
+                Locations
+            </div>
             <ion-radio ng-model="location_choice" ng-value="'Home'" ng-change="updateLocation(location_choice)">Home</ion-radio>
             <ion-radio ng-model="location_choice" ng-value="'Work'" ng-change="updateLocation(location_choice)">Work</ion-radio>
             <ion-radio ng-model="location_choice" ng-value="'School'" ng-change="updateLocation(location_choice)">School</ion-radio>
@@ -27,13 +38,6 @@
                 <button class="button button-block button-positive" ng-click="qty_time.qty = None;">
                     Use current time
                 </button>
-                <div class="item item-divider">
-                    Use Cases
-                </div>
-                <ion-radio ng-model="usecase" ng-value="17.3 * 3600" ng-change="updateUseCase('time', 17.3 * 3600)">(1) Time to leave - 30 mins</ion-radio>
-                <ion-radio ng-model="usecase" ng-value="18 * 3600" ng-change="updateUseCase('time', 18 * 3600)">(1) Time to leave - soon!</ion-radio>
-                <ion-radio ng-model="usecase" ng-value="19.5 * 3600" ng-change="updateUseCase('battery', 100);">(2) Enough battery</ion-radio>
-                <ion-radio ng-model="usecase" ng-value="12.5 * 3600" ng-change="updateUseCase('battery', 8);">(2) NOT enough battery</ion-radio>
                 <div class="item item-divider">
                     LED Mode
                 </div>
