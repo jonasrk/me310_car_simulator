@@ -1,90 +1,90 @@
 angular.module('app.controllers', [])
 
-    .controller('carTabDefaultPageCtrl', function($scope, socket) {
+.controller('carTabDefaultPageCtrl', function ($scope, socket) {
 
 
-    })
+})
 
-    .controller('locationTabDefaultPageCtrl', function($scope, socket) {
+.controller('locationTabDefaultPageCtrl', function ($scope, socket) {
 
         var dt = new Date();
         $scope.qty_time = new Quantity(60 * dt.getMinutes() + 60 * 60 * dt.getHours(), socket, 'time');
 
-        $scope.getHour = function () {
-            
-            return Math.floor($scope.qty_time.qty / 3600);
-            
-        };
+    $scope.getHour = function () {
 
-        $scope.getMinute = function () {
+        return Math.floor($scope.qty_time.qty / 3600);
 
-            return Math.floor($scope.qty_time.qty / 60 % 60);
+    };
 
-        };
+    $scope.getMinute = function () {
 
-        $scope.location_choice = null;
+        return Math.floor($scope.qty_time.qty / 60 % 60);
 
-        $scope.updateLocation = function (data) {
-            console.log(("New Location: " + data));
+    };
 
-            socket.emit('simulatorUpdate', {
-                key: 'location',
-                payLoad: data
-            });
-        };
+    $scope.location_choice = null;
 
-        $scope.choice = null;
+    $scope.updateLocation = function (data) {
+        console.log(("New Location: " + data));
 
-        $scope.updateWeather = function (data) {
-            console.log(("New Weather: " + data));
+        socket.emit('simulatorUpdate', {
+            key: 'location',
+            payLoad: data
+        });
+    };
 
-            socket.emit('simulatorUpdate', {
-                key: 'weather',
-                payLoad: data
-            });
-        };
+    $scope.choice = null;
 
-        $scope.usecase = null;
+    $scope.updateWeather = function (data) {
+        console.log(("New Weather: " + data));
 
-        $scope.updateUseCase = function (data) {
-            console.log(("New Use Case - time: " + data));
+        socket.emit('simulatorUpdate', {
+            key: 'weather',
+            payLoad: data
+        });
+    };
 
-            socket.emit('simulatorUpdate', {
-                key: 'time',
-                payLoad: data
-            });
-        };
+    $scope.usecase = null;
 
-         $scope.LED_mode = null;
+    $scope.updateUseCase = function (key, data) {
+        console.log(("New Use Case - " + key + ": " + data));
 
-        $scope.updateLED_mode= function (data) {
-            console.log(("New LED Mode: " + data));
+        socket.emit('simulatorUpdate', {
+            key: key,
+            payLoad: data
+        });
+    };
 
-            socket.emit('simulatorUpdate', {
-                key: 'LED_Mode_Update',
-                payLoad: data
-            });
-        };
+    $scope.LED_mode = null;
 
-        $scope.temp_val = 72;
+    $scope.updateLED_mode = function (data) {
+        console.log(("New LED Mode: " + data));
 
-        $scope.updateTemperature = function (data) {
-            console.log(("New Temperature: " + data));
+        socket.emit('simulatorUpdate', {
+            key: 'LED_Mode_Update',
+            payLoad: data
+        });
+    };
 
-            socket.emit('simulatorUpdate', {
-                key: 'temperature',
-                payLoad: data
-            });
-        };
+    $scope.temp_val = 72;
 
-    })
+    $scope.updateTemperature = function (data) {
+        console.log(("New Temperature: " + data));
 
-    .controller('batteryTabDefaultPageCtrl', function($scope, socket) {
-        
-        $scope.qty_battery = new Quantity(12, socket, 'battery');
-        $scope.qty_oil = new Quantity(12, socket, 'oil');
+        socket.emit('simulatorUpdate', {
+            key: 'temperature',
+            payLoad: data
+        });
+    };
 
-    });
+})
+
+.controller('batteryTabDefaultPageCtrl', function ($scope, socket) {
+
+    $scope.qty_battery = new Quantity(12, socket, 'battery');
+    $scope.qty_oil = new Quantity(12, socket, 'oil');
+
+});
 
 function Quantity(num, socket, key) {
     var qty = num;
